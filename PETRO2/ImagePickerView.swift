@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct ImagePickerView: UIViewControllerRepresentable {
-    
+    // MARK: - Internal properties
     @Binding var selectedImage: UIImage?
     @Environment(\.presentationMode) var isPresented
     var sourceType: UIImagePickerController.SourceType
@@ -22,7 +22,6 @@ struct ImagePickerView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-
     }
 
     func makeCoordinator() -> Coordinator {
@@ -30,19 +29,16 @@ struct ImagePickerView: UIViewControllerRepresentable {
     }
 }
 
-class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var picker: ImagePickerView
     
     init(picker: ImagePickerView) {
         self.picker = picker
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else { return }
         self.picker.selectedImage = selectedImage
         self.picker.isPresented.wrappedValue.dismiss()
     }
-    
 }
-
-

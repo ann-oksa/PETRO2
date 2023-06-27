@@ -12,7 +12,7 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
-    // storage
+    // MARK: - Storage
     let container: NSPersistentContainer
 
     static var preview: PersistenceController = {
@@ -36,7 +36,7 @@ struct PersistenceController {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
 
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Error: \(error.localizedDescription)")
             }
@@ -45,7 +45,7 @@ struct PersistenceController {
         
     }
     
-    func savE() {
+    func saveContext() {
         let context = container.viewContext
         if context.hasChanges {
             do {
@@ -57,4 +57,3 @@ struct PersistenceController {
         }
     }
 }
-

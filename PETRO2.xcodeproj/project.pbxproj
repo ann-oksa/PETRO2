@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		042CF29A29C3493600A4AADF /* CreatePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CF29929C3493600A4AADF /* CreatePlaceView.swift */; };
 		042CF29C29C3496900A4AADF /* PlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CF29B29C3496900A4AADF /* PlaceRow.swift */; };
 		042CF29E29C349A100A4AADF /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CF29D29C349A100A4AADF /* PlaceView.swift */; };
+		2F56B65C2C6BD51F91626956 /* Pods_PETRO2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269E0900F50E9404FA4BB9EF /* Pods_PETRO2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,9 @@
 		042CF29929C3493600A4AADF /* CreatePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaceView.swift; sourceTree = "<group>"; };
 		042CF29B29C3496900A4AADF /* PlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRow.swift; sourceTree = "<group>"; };
 		042CF29D29C349A100A4AADF /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		05ECD745568B708BBC0D5B2A /* Pods-PETRO2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PETRO2.release.xcconfig"; path = "Target Support Files/Pods-PETRO2/Pods-PETRO2.release.xcconfig"; sourceTree = "<group>"; };
+		269E0900F50E9404FA4BB9EF /* Pods_PETRO2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PETRO2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DCEC9CDB805655C780227D /* Pods-PETRO2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PETRO2.debug.xcconfig"; path = "Target Support Files/Pods-PETRO2/Pods-PETRO2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F56B65C2C6BD51F91626956 /* Pods_PETRO2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +56,8 @@
 			children = (
 				042CF28129C347B100A4AADF /* PETRO2 */,
 				042CF28029C347B100A4AADF /* Products */,
+				656A616D2BE6FDDF84A161EC /* Pods */,
+				678A9402E0575D7A30E297F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +95,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		656A616D2BE6FDDF84A161EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3DCEC9CDB805655C780227D /* Pods-PETRO2.debug.xcconfig */,
+				05ECD745568B708BBC0D5B2A /* Pods-PETRO2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		678A9402E0575D7A30E297F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				269E0900F50E9404FA4BB9EF /* Pods_PETRO2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042CF28D29C347B400A4AADF /* Build configuration list for PBXNativeTarget "PETRO2" */;
 			buildPhases = (
+				DE80DA5B00E327C500C4C416 /* [CP] Check Pods Manifest.lock */,
 				042CF27B29C347B100A4AADF /* Sources */,
 				042CF27C29C347B100A4AADF /* Frameworks */,
 				042CF27D29C347B100A4AADF /* Resources */,
+				04FEE1AA2A4ABC0D00EF3D0B /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -124,7 +150,7 @@
 				};
 			};
 			buildConfigurationList = 042CF27A29C347B100A4AADF /* Build configuration list for PBXProject "PETRO2" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -152,6 +178,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04FEE1AA2A4ABC0D00EF3D0B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		DE80DA5B00E327C500C4C416 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PETRO2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		042CF27B29C347B100A4AADF /* Sources */ = {
@@ -289,6 +358,7 @@
 		};
 		042CF28E29C347B400A4AADF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3DCEC9CDB805655C780227D /* Pods-PETRO2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,6 +391,7 @@
 		};
 		042CF28F29C347B400A4AADF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05ECD745568B708BBC0D5B2A /* Pods-PETRO2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

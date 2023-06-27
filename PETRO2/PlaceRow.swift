@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct PlaceRow: View {
+// MARK: - Internal properties
     var place: FavoritePlace
-
+    
+// MARK: - Body
     var body: some View {
         HStack {
             Image(uiImage: UIImage(data: place.imageData ?? Data()) ?? UIImage())
@@ -24,10 +26,8 @@ struct PlaceRow: View {
 struct PlaceRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlaceRow(place:FavoritePlace(name: "Eiffel Tower", country: "Paris", notes: "Too crowded, too expensive", imageName: "eiffelTower"))
-
+            PlaceRow(place: FavoritePlace(name: "Eiffel Tower", country: "Paris", notes: "Too crowded, too expensive", imageName: "eiffelTower"))
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
-

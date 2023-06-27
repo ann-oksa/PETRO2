@@ -7,9 +7,10 @@
 import SwiftUI
 
 struct PlaceView: View {
-    
+// MARK: - Internal properties
     var place: FavoritePlace
     
+// MARK: - Body
     var body: some View {
         ZStack {
             Color.purple.opacity(0.1)
@@ -37,4 +38,3 @@ struct PlaceView_Previews: PreviewProvider {
         PlaceView(place: FavoritePlace(name: "Eiffel Tower", country: "Paris", notes: "Too crowded, too expensive", imageName: "eiffelTower"))
     }
 }
-

@@ -19,7 +19,7 @@ struct PETRO2App: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { _ in
-            persistenceController.savE()
+            persistenceController.saveContext()
         }
     }
 }

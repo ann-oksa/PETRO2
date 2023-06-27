@@ -1,0 +1,12 @@
+disabled_rules:
+  - trailing_whitespace
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - Source/ExcludedFolder
+  - Source/ExcludedFile.swift
+  - Source/*/ExcludedFile.swift
+
+line_length: 400
+

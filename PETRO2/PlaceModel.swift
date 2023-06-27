@@ -15,7 +15,4 @@ struct FavoritePlace: Identifiable {
     var notes: String
     var imageData: Data?
     var imageName: String?
-//    var image: Image {
-//        Image(imageName)
-//    }
 }

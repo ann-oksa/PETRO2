@@ -10,19 +10,19 @@ import UIKit
 
 struct CreatePlaceView: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    
+    // MARK: - Private properties
+    @Environment(\.presentationMode) private var presentationMode
     @State private var name: String = ""
     @State private var country: String = ""
     @State private var notes: String = ""
-
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
+    // MARK: - Internal properties
+    var newPlaceAddFunc: (_ place: FavoritePlace) -> Void = { _ in }
     
-    var newPlaceAddFunc: (_ place: FavoritePlace) -> Void = { place in }
-    
+    // MARK: - Body
     var body: some View {
         VStack {
             if selectedImage != nil {
@@ -40,13 +40,13 @@ struct CreatePlaceView: View {
             }
             HStack {
                 Button("Camera") {
-                    self.sourceType = .camera
-                    self.isImagePickerDisplay.toggle()
+                    sourceType = .camera
+                    isImagePickerDisplay.toggle()
                 }.padding()
                 
                 Button("photo") {
-                    self.sourceType = .photoLibrary
-                    self.isImagePickerDisplay.toggle()
+                    sourceType = .photoLibrary
+                    isImagePickerDisplay.toggle()
                 }.padding()
             }
             .buttonStyle(.borderedProminent)
@@ -68,23 +68,24 @@ struct CreatePlaceView: View {
             .tint(.pink)
             .frame(width: 300, height: 80, alignment: .center)
         }
-        .sheet(isPresented: self.$isImagePickerDisplay) {
-            ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.sourceType)
+        .sheet(isPresented: $isImagePickerDisplay) {
+            ImagePickerView(selectedImage: $selectedImage, sourceType: sourceType)
         }
-        
-    }
-    
-    func addNewPlace() {
-        print(name, country, notes)
-        guard !name.isEmpty && !country.isEmpty else { return }
-        let data = self.selectedImage?.jpegData(compressionQuality: 1.0)
-        let place = FavoritePlace(name: name, country: country, notes: notes, imageData: data)
-        self.newPlaceAddFunc(place)
     }
 }
 
 struct CreatePlaceView_Previews: PreviewProvider {
     static var previews: some View {
         CreatePlaceView()
+    }
+}
+
+private extension CreatePlaceView {
+    func addNewPlace() {
+        print(name, country, notes)
+        guard !name.isEmpty && !country.isEmpty else { return }
+        let data = selectedImage?.jpegData(compressionQuality: 1.0)
+        let place = FavoritePlace(name: name, country: country, notes: notes, imageData: data)
+        newPlaceAddFunc(place)
     }
 }
