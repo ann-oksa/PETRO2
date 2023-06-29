@@ -16,7 +16,9 @@ struct PETRO2App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.locale, .init(identifier: "uk"))
+//                .environment(\.locale, .init(languageComponents: .init(language: .init(identifier: "Ukrainian"))))
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: scenePhase) { _ in
             persistenceController.saveContext()

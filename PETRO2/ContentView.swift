@@ -35,7 +35,7 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-                .navigationTitle("Favorite Places")
+                .navigationTitle(LocalizedStringKey("Hello, Angelo!"))
                 .toolbar {
                     Button {
                         addingPlace.toggle()
